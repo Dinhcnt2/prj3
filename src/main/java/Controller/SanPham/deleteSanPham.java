@@ -22,7 +22,7 @@ public class deleteSanPham extends HttpServlet {
         try {
             int maSanPham = Integer.parseInt(request.getParameter("maSanPham"));
             cuaHangDAO.deleteSanPham(maSanPham);
-            response.sendRedirect("listSanPham.jsp");
+            response.sendRedirect("VVDlistSanPham.jsp");
         } catch (Exception e) {
             e.printStackTrace();
             response.getWriter().println("Lỗi: " + e.getMessage());

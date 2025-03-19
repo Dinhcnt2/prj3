@@ -34,10 +34,10 @@
         <h1>Hệ Thống Quản Lý</h1>
         <nav>
             <ul>
-                <li><a href="${pageContext.request.contextPath}/Backend/Home.jsp">Trang chủ</a></li>
-                <li><a href="${pageContext.request.contextPath}/Backend/NhanVien/listNhanVien.jsp">Quản lý Nhân Viên</a></li>
-                <li><a href="${pageContext.request.contextPath}/Backend/SanPham/listSanPham.jsp">Quản lý Sản Phẩm</a></li>
-                <li><a href="${pageContext.request.contextPath}/Backend/KhachHang/listKhachHang.jsp">Quản lý Khách Hàng</a></li>
+                <li><a href="${pageContext.request.contextPath}/Backend/VVDHome.jsp">Trang chủ</a></li>
+                <li><a href="${pageContext.request.contextPath}/Backend/NhanVien/VVDlistNhanVien.jsp">Quản lý Nhân Viên</a></li>
+                <li><a href="${pageContext.request.contextPath}/Backend/SanPham/VVDlistSanPham.jsp">Quản lý Sản Phẩm</a></li>
+                <li><a href="${pageContext.request.contextPath}/Backend/KhachHang/VVDlistKhachHang.jsp">Quản lý Khách Hàng</a></li>
                 <li><a href="${pageContext.request.contextPath}/Backend/login.jsp">Đăng nhập</a></li>
             </ul>
         </nav>

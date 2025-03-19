@@ -12,7 +12,7 @@ import DAO.CuaHangDAO;
 import Model.SanPham;
 
 @WebServlet("/Backend/SanPham/addSanPham")
-public class addSanPham extends HttpServlet {
+public class VVDaddSanPham extends HttpServlet {
     private static final long serialVersionUID = 1L;
     private CuaHangDAO CuaHangDAO;
 
@@ -44,7 +44,7 @@ public class addSanPham extends HttpServlet {
             CuaHangDAO.addSanPham(sanPham);
 
             // Chuyển hướng về danh sách sản phẩm
-            response.sendRedirect("listSanPham.jsp");
+            response.sendRedirect("VVDlistSanPham.jsp");
         } catch (Exception e) {
             e.printStackTrace();
             response.getWriter().println("Lỗi: " + e.getMessage());
@@ -52,7 +52,7 @@ public class addSanPham extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        RequestDispatcher dispatcher = request.getRequestDispatcher("/Backend/SanPham/addSanPham.jsp");
+        RequestDispatcher dispatcher = request.getRequestDispatcher("/Backend/SanPham/VVDaddSanPham.jsp");
         dispatcher.forward(request, response);
     }
 }

@@ -7,7 +7,7 @@
     NhanVien nhanVien = (NhanVien) sess.getAttribute("nhanVien");
 
     if (nhanVien == null) {
-        response.sendRedirect("login.jsp");
+        response.sendRedirect("VVDlogin.jsp");
         return;
     }
 

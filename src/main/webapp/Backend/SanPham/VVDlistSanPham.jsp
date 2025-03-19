@@ -151,7 +151,7 @@ h2 {
     </div>
     <br>
     <div style="text-align: center;">
-        <a href="addSanPham.jsp" class="add-button">Thêm Sản Phẩm</a>
+        <a href="VVDaddSanPham.jsp" class="add-button">Thêm Sản Phẩm</a>
     </div>
     <div style="text-align: center; margin-top: 20px;">
         <a href="${pageContext.request.contextPath}/Backend/trangchu.jsp" class="back-button">Quay lại trang chủ</a>

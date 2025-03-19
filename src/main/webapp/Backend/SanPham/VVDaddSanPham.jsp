@@ -120,7 +120,7 @@ button:hover {
     </form>
 </section>
 
-<a href="${pageContext.request.contextPath}/Backend/SanPham/listSanPham.jsp" class="back-link">Về Trang Danh Sách</a>
+<a href="${pageContext.request.contextPath}/Backend/SanPham/VVDlistSanPham.jsp" class="back-link">Về Trang Danh Sách</a>
 <%@ include file="../Layout/footer.jsp" %>
 
 </body>

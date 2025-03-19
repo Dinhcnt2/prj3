@@ -13,7 +13,7 @@ import javax.servlet.http.HttpSession;
 
 
 @WebServlet("/LoginServlet")
-public class LoginServlet extends HttpServlet {
+public class VVDLoginServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
@@ -35,11 +35,11 @@ public class LoginServlet extends HttpServlet {
             session.setAttribute("nhanVien", nhanVien);
 
             // Chuyển hướng đến trang quản lý nhân viên
-            response.sendRedirect("Backend/Home.jsp");
+            response.sendRedirect("Backend/VVDHome.jsp");
         } else {
             // Đăng nhập thất bại, chuyển hướng về trang đăng nhập
             request.setAttribute("errorMessage", "Sai email hoặc số điện thoại!");
-            request.getRequestDispatcher("Backend/NhanVien/login.jsp").forward(request, response);
+            request.getRequestDispatcher("Backend/NhanVien/VVDlogin.jsp").forward(request, response);
         }
     }
 }

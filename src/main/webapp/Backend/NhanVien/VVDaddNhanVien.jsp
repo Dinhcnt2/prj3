@@ -108,7 +108,7 @@ button:hover {
     </form>
 </section>
 
-<a href="listNhanVien.jsp" class="back-link">Về Trang Danh Sách Nhân Viên</a>
+<a href="VVDlistNhanVien.jsp" class="back-link">Về Trang Danh Sách Nhân Viên</a>
 <%@ include file="../Layout/footer.jsp" %>
 
 </body>

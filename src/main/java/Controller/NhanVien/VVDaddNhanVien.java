@@ -11,22 +11,13 @@ import javax.servlet.http.HttpServletResponse;
 import DAO.CuaHangDAO;
 import Model.NhanVien;
 
-@WebServlet("/Backend/NhanVien/updateNhanVien")
-public class updateNhanVien extends HttpServlet {
+@WebServlet("/Backend/NhanVien/addNhanVien")
+public class VVDaddNhanVien extends HttpServlet {
     private static final long serialVersionUID = 1L;
     private CuaHangDAO cuaHangDAO;
 
     public void init() {
         cuaHangDAO = new CuaHangDAO();
-    }
-
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        int maNhanVien = Integer.parseInt(request.getParameter("maNhanVien"));
-        NhanVien nhanVien = cuaHangDAO.getNhanVienById(maNhanVien);
-        request.setAttribute("nhanVien", nhanVien);
-
-        RequestDispatcher dispatcher = request.getRequestDispatcher("/Backend/NhanVien/updateNhanVien.jsp");
-        dispatcher.forward(request, response);
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -36,7 +27,6 @@ public class updateNhanVien extends HttpServlet {
 
         try {
             // Lấy dữ liệu từ form
-            int maNhanVien = Integer.parseInt(request.getParameter("maNhanVien"));
             String hoTen = request.getParameter("hoTen");
             String soDienThoai = request.getParameter("soDienThoai");
             String email = request.getParameter("email");
@@ -44,15 +34,22 @@ public class updateNhanVien extends HttpServlet {
             double luong = Double.parseDouble(request.getParameter("luong"));
             String ngayVaoLam = request.getParameter("ngayVaoLam");
 
-            // Cập nhật thông tin nhân viên
-            NhanVien nhanVien = new NhanVien(maNhanVien, hoTen, soDienThoai, email, chucVu, luong, ngayVaoLam);
-            cuaHangDAO.updateNhanVien(nhanVien);
+            // Tạo đối tượng nhân viên
+            NhanVien nhanVien = new NhanVien(0, hoTen, soDienThoai, email, chucVu, luong, ngayVaoLam);
+
+            // Thêm nhân viên vào DB
+            cuaHangDAO.addNhanVien(nhanVien);
 
             // Chuyển hướng về danh sách nhân viên
-            response.sendRedirect("listNhanVien.jsp");
+            response.sendRedirect("VVDlistNhanVien.jsp");
         } catch (Exception e) {
             e.printStackTrace();
             response.getWriter().println("Lỗi: " + e.getMessage());
         }
+    }
+
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        RequestDispatcher dispatcher = request.getRequestDispatcher("/Backend/NhanVien/VVDaddNhanVien.jsp");
+        dispatcher.forward(request, response);
     }
 }

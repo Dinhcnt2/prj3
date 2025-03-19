@@ -13,7 +13,7 @@ import DAO.CuaHangDAO;
 import Model.KhachHang;
 
 @WebServlet("/Backend/KhachHang/updateKhachHang")
-public class updateKhachHang extends HttpServlet {
+public class VVDupdateKhachHang extends HttpServlet {
     private static final long serialVersionUID = 1L;
     private CuaHangDAO cuaHangDAO;
 
@@ -35,10 +35,10 @@ public class updateKhachHang extends HttpServlet {
                 return;
             }
             request.setAttribute("khachHang", khachHang);
-            RequestDispatcher dispatcher = request.getRequestDispatcher("/Backend/KhachHang/updateKhachHang.jsp");
+            RequestDispatcher dispatcher = request.getRequestDispatcher("/Backend/KhachHang/VVDupdateKhachHang.jsp");
             dispatcher.forward(request, response);
         } catch (NumberFormatException e) {
-            response.sendRedirect("listKhachHang.jsp");
+            response.sendRedirect("VVDlistKhachHang.jsp");
         }
     }
 
@@ -61,7 +61,7 @@ public class updateKhachHang extends HttpServlet {
                     ngayThamGia = LocalDate.parse(ngayThamGiaStr);
                 } catch (DateTimeParseException e) {
                     request.setAttribute("error", "Ngày tham gia không hợp lệ!");
-                    RequestDispatcher dispatcher = request.getRequestDispatcher("/Backend/KhachHang/updateKhachHang.jsp");
+                    RequestDispatcher dispatcher = request.getRequestDispatcher("/Backend/KhachHang/VVDupdateKhachHang.jsp");
                     dispatcher.forward(request, response);
                     return;
                 }
@@ -69,10 +69,10 @@ public class updateKhachHang extends HttpServlet {
 
             KhachHang khachHang = new KhachHang(maKhachHang, hoTen, soDienThoai, email, diaChi, ngayThamGia);
             cuaHangDAO.updateKhachHang(khachHang);
-            response.sendRedirect("listKhachHang.jsp");
+            response.sendRedirect("VVDlistKhachHang.jsp");
         } catch (NumberFormatException e) {
             request.setAttribute("error", "Dữ liệu nhập vào không hợp lệ!");
-            RequestDispatcher dispatcher = request.getRequestDispatcher("/Backend/KhachHang/updateKhachHang.jsp");
+            RequestDispatcher dispatcher = request.getRequestDispatcher("/Backend/KhachHang/VVDupdateKhachHang.jsp");
             dispatcher.forward(request, response);
         }
     }

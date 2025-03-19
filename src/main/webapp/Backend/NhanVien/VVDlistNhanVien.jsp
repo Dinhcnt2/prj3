@@ -104,7 +104,7 @@
     </div>
     
     <div style="text-align: center;">
-        <a href="addNhanVien.jsp" class="add-button">Thêm Nhân Viên</a>
+        <a href="VVDaddNhanVien.jsp" class="add-button">Thêm Nhân Viên</a>
     </div>
 </section>
 

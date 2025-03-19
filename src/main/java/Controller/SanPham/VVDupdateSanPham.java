@@ -12,7 +12,7 @@ import DAO.CuaHangDAO;
 import Model.SanPham;
 
 @WebServlet("/Backend/SanPham/updateSanPham")
-public class updateSanPham extends HttpServlet {
+public class VVDupdateSanPham extends HttpServlet {
     private static final long serialVersionUID = 1L;
     private CuaHangDAO cuaHangDAO;
 
@@ -35,7 +35,7 @@ public class updateSanPham extends HttpServlet {
                 return;
             }
             request.setAttribute("sanPham", sanPham);
-            RequestDispatcher dispatcher = request.getRequestDispatcher("/Backend/SanPham/updateSanPham.jsp");
+            RequestDispatcher dispatcher = request.getRequestDispatcher("/Backend/SanPham/VVDupdateSanPham.jsp");
             dispatcher.forward(request, response);
         } catch (NumberFormatException e) {
             response.sendError(HttpServletResponse.SC_BAD_REQUEST, "Mã sản phẩm không hợp lệ.");
@@ -61,10 +61,10 @@ public class updateSanPham extends HttpServlet {
 
             SanPham sanPham = new SanPham(maSP, tenSP, loaiSP, kichCo, mauSac, chatLieu, hinhAnh, gia, soLuongTonKho, maNhaCungCap);
             cuaHangDAO.updateSanPham(sanPham);
-            response.sendRedirect("listSanPham.jsp");
+            response.sendRedirect("VVDlistSanPham.jsp");
         } catch (NumberFormatException e) {
             request.setAttribute("error", "Dữ liệu nhập vào không hợp lệ!");
-            RequestDispatcher dispatcher = request.getRequestDispatcher("/Backend/SanPham/updateSanPham.jsp");
+            RequestDispatcher dispatcher = request.getRequestDispatcher("/Backend/SanPham/VVDupdateSanPham.jsp");
             dispatcher.forward(request, response);
         }
     }

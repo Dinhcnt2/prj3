@@ -14,7 +14,7 @@ import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
 
 @WebServlet("/Backend/KhachHang/addKhachHang")
-public class addKhachHang extends HttpServlet {
+public class VVDaddKhachHang extends HttpServlet {
     private static final long serialVersionUID = 1L;
     private CuaHangDAO cuaHangDAO;
 
@@ -49,7 +49,7 @@ public class addKhachHang extends HttpServlet {
             KhachHang khachHang = new KhachHang(0, hoTen, soDienThoai, email, diaChi, ngayThamGia);
             cuaHangDAO.addKhachHang(khachHang);
 
-            response.sendRedirect("listKhachHang.jsp");
+            response.sendRedirect("VVDlistKhachHang.jsp");
         } catch (Exception e) {
             e.printStackTrace();
             response.getWriter().println("Lỗi: " + e.getMessage());
@@ -57,7 +57,7 @@ public class addKhachHang extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        RequestDispatcher dispatcher = request.getRequestDispatcher("/Backend/KhachHang/addKhachHang.jsp");
+        RequestDispatcher dispatcher = request.getRequestDispatcher("/Backend/KhachHang/VVDaddKhachHang.jsp");
         dispatcher.forward(request, response);
     }
 }
